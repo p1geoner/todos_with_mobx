@@ -1,13 +1,205 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+li {
+  list-style-type: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  background: #fffffa;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.done {
+  text-decoration: line-through;
+  color: rgb(122, 122, 122);
+}
+.title {
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 130px;
+  color: #424242;
+}
+.title__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 120px;
+  line-height: 145px;
+  letter-spacing: -0.04em;
+}
+.title__sub-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+ul {
+  width: 450px;
+  margin: 0 auto;
+}
+.todoitem {
+  display: flex;
+  justify-content: space-between;
+}
+.todoitem__container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.todoitem__text {
+  color: #424242;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+.date__text {
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 110%;
+}
+.date__text img {
+  margin-right: 5px;
+}
+.red {
+  color: #953b3b;
+  font-weight: 600;
+}
+li {
+  border-bottom: 1px solid #8b8b8b;
+  padding: 10px 2px;
+}
+.todoitem__btn {
+  border: 0px;
+  outline: 0px;
+  width: 20px;
+  height: 20x;
+  background-color: transparent;
+  cursor: pointer;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("./img/delete.svg");
+}
+.todoitem__btn:hover {
+  background-image: url("./img/delete-hover.svg");
+}
+.todoitem__btn:active {
+  background-image: url("./img/delete-active.svg");
+}
+.addTodo__input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+.addTodo__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.addTodo__btn {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+.addTodo {
+  padding-top: 16px;
+  width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.addTodo__input {
+  margin-left: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+.addTodo__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.addTodo__container input[type="date"],
+input[type="time"] {
+  border: 0;
+  outline: 0;
+}
+.real-check {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom-check {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid #424242;
+  cursor: pointer;
+}
+.custom-check:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.todoitem__container .custom-check::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-image: url("./img/checkbox.svg");
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform: scale(0);
+}
+.real-check:checked ~ .custom-check::before {
+  transform: scale(1);
+}
+.filterTodo {
+  width: 450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #8b8b8b;
+}
+.real-radio {
+  display: none;
+}
+.real-radio:checked ~ .fake-radio {
+  border-bottom: 3px solid #424242;
+  color: #424242;
+}
+.fake-radio {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #7d7d7d;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.1s ease;
+}
+.non-visible {
+  display: none;
+}
+.todolist {
+  margin-top: 16px;
 }
