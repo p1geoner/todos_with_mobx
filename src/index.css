@@ -15,10 +15,6 @@ li {
   font-family: "Inter";
   background: #fffffa;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 .done {
   text-decoration: line-through;
   color: rgb(122, 122, 122);
@@ -57,6 +53,7 @@ ul {
   gap: 12px;
 }
 .todoitem__text {
+  font-family: "Inter";
   color: #424242;
   text-align: left;
   font-style: normal;

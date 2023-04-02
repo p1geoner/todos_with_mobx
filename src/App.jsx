@@ -11,7 +11,7 @@ const App = observer(() => {
   return (
     <>
       <header className="navigation">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         {UserStore.isAuthenticated ? (
           <Link to="/logout">Выйти</Link>
         ) : (
@@ -24,7 +24,7 @@ const App = observer(() => {
         </h1>
       </header>
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/logout" element={<Logout />} />
