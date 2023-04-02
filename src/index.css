@@ -203,3 +203,25 @@ input[type="time"] {
 .todolist {
   margin-top: 16px;
 }
+.navigation {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  height: 30px;
+  width: 100%;
+  background-color: antiquewhite;
+}
+.navigation a,
+.username {
+  font-size: 20px;
+  color: #424242;
+  text-decoration: none;
+  background-color: antiquewhite;
+}
+.navigation a:hover {
+  color: #7d7d7d;
+  text-decoration: underline;
+}
+.error-auth {
+  text-align: center;
+}
