@@ -7,12 +7,9 @@ const LoginPage = observer(() => {
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
-    console.log(username);
-    console.log(password);
     UserStore.login(username, password);
   }
   if (UserStore.isAuthenticated) {
-    console.log(UserStore.token);
     return <Navigate to="/main" />;
   } else {
     return (

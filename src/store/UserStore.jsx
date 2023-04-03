@@ -28,6 +28,7 @@ class UserStore {
       this.last_name = last_name;
       this.token = API_Key;
       localStorage.setItem("token", this.token);
+      console.log("Авторизация прошла успешно");
     } else {
       // Обрабатываем ошибку авторизации
       alert("Неверные учетные данные");
@@ -37,9 +38,9 @@ class UserStore {
     const response = await fetch(
       `http://46.173.215.136/api/users/auth/?API_Key=${token}`,
       {
-        headers: {
+        headers: new Headers({
           token: `${token}`,
-        },
+        }),
         method: "GET",
       },
     );
@@ -51,7 +52,7 @@ class UserStore {
       this.first_name = first_name;
       this.last_name = last_name;
       this.token = API_Key;
-      console.log("харош");
+      console.log("Аутентификация прошла успешно!");
     } else {
       alert("Зайдите еще раз!");
     }
@@ -60,7 +61,8 @@ class UserStore {
     this.isAuthenticated = false;
     this.username = "";
     this.token = "";
-    localStorage.setItem("token", " ");
+    localStorage.removeItem("token");
+    console.log("Пользователь вышел");
   };
 }
 
